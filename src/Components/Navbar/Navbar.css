@@ -1,21 +1,24 @@
     #Navbar {
-        position: sticky;
+    position: sticky;
     list-style-type: none;
     display: grid;
     flex-direction: row;
-    grid-template-columns: 1fr 1fr;
     outline: none;
+    grid-template-columns: 1fr 1fr;
     font-size: 17px;
     text-decoration:none;
     font-family: 'Roboto', sans-serif;
     top: 0;
     z-index: 50;
 
+
   }
 .itensNav{
+   margin-right: 40px;
     display: flex;
     flex-direction: row;
     text-decoration:none;
+    justify-content: space-evenly;
 }
 a:link{
     text-decoration:none;
@@ -31,22 +34,13 @@ a { color: inherit; }
     display: flex;
     align-self: center;
 }
-.dropdownLi {
-     display: inline-block;
-     padding: 26px 27px;
-     position: absolute;
-     z-index: 1;
-}
-.dropdownLi > li{
-    font-size: 10pt;
-    text-decoration: none;
-    list-style-type: none;
-}
-.dropdownLi > li:hover{
-    border-bottom: 1px solid black;   
-}
 @media screen and (max-width: 768px){
     #Navbar{
       display: none;
+    }
+  }
+@media screen and (min-width: 2000px){
+    .itensNav{
+    margin-left: 190px;
     }
   }

@@ -3,7 +3,7 @@ import './MenuMobile.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link';
 import Contato from '../Contato/Contato'
 
 export default class Barra extends React.Component {
@@ -16,7 +16,7 @@ export default class Barra extends React.Component {
         }
     }
     mostrarMenu = () => {
-        if (this.state.icon === faBars) {
+        if (this.state.icon === faBars || this.state.open === false ) {
             this.setState(state => {
                 return {
                     open: !state.open,
@@ -45,13 +45,13 @@ export default class Barra extends React.Component {
                 {this.state.open ?
                     <ul id="menuItens">
                         <div id="containerBtnMenu">
-                            <hr size="1" />
-                            <Link to='/'><li>HOME</li></Link>
-                            <li>EMPRESA</li>
-                            <Link to='/mej'><li>MEJ</li></Link>
-                            <Link to='/serviços'><li>SERVIÇOS</li></Link>
-                            <Link to='/equipe'><li>EQUIPE</li></Link>
-                            <li>BLOG</li>
+                            <Link smooth to={'/#section1'}><li onClick={this.mostrarMenu}> HOME</li></Link>
+                            <Link smooth to={'/#section2'}><li onClick={this.mostrarMenu}>EMPRESA</li></Link>
+                            <Link smooth to={'/#section3'}><li onClick={this.mostrarMenu}>MEJ</li></Link>
+                            <Link smooth to={'/#section4'}><li onClick={this.mostrarMenu}>SERVIÇOS</li></Link>
+                            <Link smooth to={'/portfolio'}><li onClick={this.mostrarMenu}>PORTFOLIO</li></Link>
+                            <Link smooth to={'/equipe'}><li onClick={this.mostrarMenu}>EQUIPE</li></Link>
+                            <Link smooth to={'blog'}><li onClick={this.mostrarMenu}>BLOG</li></Link>
                             <li onClick={this.showModal}>ORÇAMENTO
                             </li>
                             {this.state.isVisible ?
@@ -59,7 +59,6 @@ export default class Barra extends React.Component {
                                     :
                                     null
                                 }
-                            <hr size="1" />
                             <div id="icones">
                                 <a href="https://www.facebook.com/EJComp.UNESP/?epa=SEARCH_BOX" target="_blank" rel="noopener noreferrer" >
                                     <FontAwesomeIcon icon={faFacebook} size='lg' color='black' className='midiaMobile' />

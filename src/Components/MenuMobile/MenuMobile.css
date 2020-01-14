@@ -2,9 +2,10 @@
     outline: 0;
     background-color: transparent; 
     border: 0;    
+    margin-right: 1%;
  }
  #menuItens{
-     background-color: white;
+     background-color: #fff;
      position: absolute;
      color: black;
      height: 100vh;
@@ -26,7 +27,7 @@
  }
  #containerBtnMenu{
      display: grid;
-     grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
      align-items: center;
      text-align: center;
  }

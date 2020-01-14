@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css'
 import ButtonsHome from '../Buttons/Buttons'
-import MenuMobile from '../MenuMobile/MenuMobile'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import Contato from '../Contato/Contato'
 import { HashLink as Link } from 'react-router-hash-link';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 export default class TelaHome extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +39,7 @@ export default class TelaHome extends React.Component {
   render() {
     return (
       <div className="App" id={this.props.id}>
-        <div id="containerLogo" className="fadeRight"></div>
+          <div id="containerLogo" className="fadeRight"></div>
         <div id="containerButtons">
           <ButtonsHome nome="HOME" idTexto="texto"
             Texto=' Página inicial' />
@@ -46,16 +47,15 @@ export default class TelaHome extends React.Component {
             Texto=' Conheça mais sobre a EJComp ' /></Link>
           <Link smooth to={'/#section3'}><ButtonsHome nome="MEJ" idTexto="texto3"
             Texto='Movimento Empresa Júnior, saiba mais. ' /></Link>
-          <Link to='/serviços'><ButtonsHome nome="SERVIÇOS" idTexto="texto4"
+          <Link smooth to={'/portfolio'}><ButtonsHome nome="PORTFOLIO" idTexto="texto4"
             Texto='Os principais serviços prestados pela EJComp ' /></Link>
           <Link to='/equipe'><ButtonsHome nome="EQUIPE" idTexto="texto5"
             Texto='Conheça quem são os integrantes da Empresa Júnior ' /></Link>
           <Link to='/blog'><ButtonsHome nome="BLOG" idTexto="texto6"
             Texto='Conteúdos, informações e notícias ' /></Link>
         </div>
-        <div id="menu"> <MenuMobile /> </div> {/*Versao mobile do site */}
         <div id="grid-row3">
-          <div id="containerApp"><Link to='/serviços'>
+          <div id="containerApp"><Link smooth to={'/#section4'}>
             <button id="btn3" >
               {this.state.string}
             </button></Link>
